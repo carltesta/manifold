@@ -1,7 +1,10 @@
 -- Manifold
--- v0.0.1 @carl testa
+-- v0.0.1 @carltesta
+-- https://llllllll.co/t/manifold
 --
 -- Multieffects Engine and Script
+--
+-- audio input goes in channel 1(L)
 --
 -- K1 held is alt
 --

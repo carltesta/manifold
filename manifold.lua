@@ -47,7 +47,7 @@ function init()
   params:add_control("delaynano","delay-nano",controlspec.new(0,1,'lin',1,0,''))
     params:set_action("delaynano", function(val) 
       if val== 1 then 
-        params:set("delaytime", randomFloat(0.01,1.0)) 
+        params:set("delaytime", randomFloat(0.01,0.1)) 
         params:set("delayfeedback", randomFloat(0.5,0.9))end
       end)
       
@@ -61,7 +61,7 @@ function init()
   params:add_control("delaymed","delay-med",controlspec.new(0,1,'lin',1,0,''))
     params:set_action("delaymed", function(val) 
       if val== 1 then 
-        params:set("delaytime", randomFloat(1.0,8.0)) 
+        params:set("delaytime", randomFloat(1.0,3.0)) 
         params:set("delayfeedback", randomFloat(0.1,0.9))end
       end)
       

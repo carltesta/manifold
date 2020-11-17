@@ -157,7 +157,7 @@ end
 
 function enc(n, d)
   if n == 1 then
-    mix:delta("output", d)
+    params:delta("output_level", d)
   elseif n == 2 then
     if alt == 1 then
       params:delta("freezevolume", d)

@@ -18,7 +18,7 @@ Engine_Manifold : CroneEngine {
 		input.source = {Mix.ar(In.ar([context.in_b[0].index,context.in_b[1].index]))};
 
     //Crossfading Delay to avoid pitch shifts during delaytime changes
-		delay = NodeProxy.new(context.server, \audio, 1);
+		delay = NodeProxy.new(context.server, \audio, 2);
 		delay.source = {
 			var local = LocalIn.ar(1) + input.ar(1);
 			var select = ToggleFF.kr(\toggle.tr(1.neg));
@@ -31,7 +31,7 @@ Engine_Manifold : CroneEngine {
 		};
 
     //Amplitude Modulation with Triangle Wave and Gate
-		ampmod = NodeProxy.new(context.server, \audio, 1);
+		ampmod = NodeProxy.new(context.server, \audio, 2);
 		ampmod.source = {
 			var off = Lag2.kr(A2K.kr(DetectSilence.ar(input.ar(1),0.05),0.3));
             var on = 1-off;
@@ -43,14 +43,14 @@ Engine_Manifold : CroneEngine {
 		};
 
 		//Granular Pitchshifter
-		pitchshift = NodeProxy.new(context.server, \audio, 1);
+		pitchshift = NodeProxy.new(context.server, \audio, 2);
 		pitchshift.source = {
 		  var pitch = PitchShift.ar(input.ar(1), 0.2, \rate.kr(2.0));
 		  (pitch!2)*\volume.kr(1.0);
 		  };
 
 		//FFT-based Freeze
-		freeze = NodeProxy.new(context.server, \audio, 1);
+		freeze = NodeProxy.new(context.server, \audio, 2);
 		freeze.source = {
 	    var chain = FFT(LocalBuf(1024), input.ar(1));
     	chain = PV_Freeze(chain, \freeze.kr(0));

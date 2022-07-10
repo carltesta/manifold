@@ -15,7 +15,7 @@ Engine_Manifold : CroneEngine {
 		//Add NodeProxies
 		//Audio Input
 		input = NodeProxy.new(context.server, \audio, 1);
-		input.source = {In.ar(Mix.ar([context.in_b[0].index,context.in_b[1].index]))};
+		input.source = {Mix.ar(In.ar([context.in_b[0].index,context.in_b[1].index]))};
 
     //Crossfading Delay to avoid pitch shifts during delaytime changes
 		delay = NodeProxy.new(context.server, \audio, 1);

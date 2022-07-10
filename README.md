@@ -1,3 +1,6 @@
+## Manifold
+### multi-effects audio processing
+
 ## screenshots
 ![manifold.png](https://norns.community/community/carltesta/manifold.png)
 ## description
